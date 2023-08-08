@@ -16,6 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/boards")
+@CrossOrigin("*")
 public class BoardController {
     @Autowired
     BoardService boardService;
