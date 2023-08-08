@@ -11,6 +11,18 @@
 </head>
 
 <body>
+<header class="header">
+    <div class="header-left">
+        <h1 class="headerTitle">Project Management Board</h1>
+    </div>
+    <div class="header-right">
+        <div class="title-input-container">
+            <input class="title-input" type="text" placeholder="Enter Board Title">
+            <button class="title-button" onclick="createNewBoard()">Create Board</button>
+        </div>
+    </div>
+</header>
+
 <div class="container-fluid">
     <div class="row">
 
@@ -165,7 +177,35 @@
         </div>
     </div>
 </template>
+<script>
+    function createNewBoard() {
+    const titleInput = document.querySelector(".title-input");
+    const title = titleInput.value;
 
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify({
+        "title": title
+    });
+
+    const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+    };
+
+    fetch("http://localhost:8080/api/boards", requestOptions)
+        .then(response => response.text())
+        .then(result => {
+            console.log(result);
+            headerTitle.textContent = newTitle;
+            // You can handle success here, like updating the UI
+        })
+        .catch(error => console.log('error', error));
+}
+</script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script type="module" src="index.js"></script>
 </body>

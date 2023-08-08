@@ -143,6 +143,7 @@
 
 
 
+
     //////////////////////////////
     async function fetchUpdateTask(updatedObject) {
         let url = API_URL_UPDATE_CARD + updatedObject.card_id
