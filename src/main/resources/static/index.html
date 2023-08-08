@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Trello-Project</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col col-12 col-md-12 col-xl-4 mt-5">
+            <div class="card mainContainer">
+                <div class="card-header">
+                    <div class="row">
+                        <h1 class="text-center mb-0 col-11 col-xl-10" style=" font-weight: bolder;">TO DO</h1>
+                        <div class="col-1 col-xl-2" style="height: 48;padding-left: 0px;padding-right: 0px;"><img
+                                id="btnAddTodoTask" style="width: 100%;height: 48px;" src="assets/img/ic-add.svg"
+                                data-bs-toggle="modal" data-bs-target="#modalAdd">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body overflow-auto" id="todoContainer"
+                     style="height: 400px;padding-top: 40px;padding-bottom: 40px;">
+                    <!-- task template lives here! -->
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col col-12 col-md-12 col-xl-4 mt-5">
+            <div class="card mainContainer">
+                <div class="card-header">
+                    <div class="row">
+                        <h1 class="text-center mb-0 col-11 col-xl-10" style=" font-weight: bolder;">IN PROGRESS</h1>
+                        <div class="col-1 col-xl-2" style="height: 48;padding-left: 0px;padding-right: 0px;"><img
+                                id="btnAddInProgress" style="width: 100%;height: 48px;" src="assets/img/ic-add.svg"
+                                data-bs-toggle="modal" data-bs-target="#modalAdd">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body overflow-auto" id="inProgressContainer"
+                     style="height: 400px;padding-top: 40px;padding-bottom: 40px;">
+                    <!-- task template lives here! -->
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col col-12 col-md-12 col-xl-4 mt-5">
+            <div class="card mainContainer">
+                <div class="card-header">
+                    <div class="row">
+                        <h1 class="text-center mb-0 col-11 col-xl-10" style=" font-weight: bolder;">DONE</h1>
+                        <div class="col-1 col-xl-2" style="height: 48;padding-left: 0px;padding-right: 0px;"><img
+                                id="btnAddDone" style="width: 100%;height: 48px;" src="assets/img/ic-add.svg" data-bs-toggle="modal" data-bs-target="#modalAdd"></div>
+                    </div>
+                </div>
+
+                <div class="card-body overflow-auto" id="doneContainer"
+                     style="height: 400px;padding-top: 40px;padding-bottom: 40px;">
+                    <!-- task template lives here! -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div id="modalAdd" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modalAddTitle">Add Task</h4>
+                <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <select id="modalAdd_selectStatus" class="form-select-lg w-100 mb-3" style="height: 56px;">
+                    <optgroup label="This is a group">
+                        <option value="task_status_none" selected="">Task Status</option>
+                        <option value="1">TODO</option>
+                        <option value="2">IN PROGRESS</option>
+                        <option value="3">DONE</option>
+                    </optgroup>
+                </select>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Title</span>
+                    <input id="modalAdd_inputTitle" class="form-control" type="text" style="height: 56px;">
+                </div>
+                <!-- Update the ID and placeholder for the textarea element -->
+                <textarea class="form-control-lg w-100" id="modalAdd_textareaDescription" placeholder="Description" style="height: 124px;"></textarea>
+            </div>
+            <div class="modal-footer d-flex">
+                <div class="flex-fill text-end">
+                    <button class="btn btn-light btn-lg me-3" id="btnClose" type="button" data-bs-dismiss="modal" style="width: 100px;">CLOSE</button>
+                    <button class="btn btn-success btn-lg" id="modalAdd_btnSubmit" type="button" style="width: 100px;">SAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="modalUpdate" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modalTitle">Update Task</h4>
+                <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <select id="selectStatus" class="form-select-lg w-100 mb-3" style="height: 56px;">
+                    <optgroup label="This is a group">
+                        <option value="task_status_none" selected="">Task Status</option>
+                        <option value="1">TODO</option>
+                        <option value="2">IN PROGRESS</option>
+                        <option value="3">DONE</option>
+                    </optgroup>
+                </select>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Title</span>
+                    <input id="inputTitle" class="form-control" type="text" style="height: 56px;">
+                </div>
+                <!-- Update the ID and placeholder for the textarea element -->
+                <textarea class="form-control-lg w-100" id="inputDescription" placeholder="Description" style="height: 124px;"></textarea>
+            </div>
+            <div class="modal-footer d-flex">
+                <button class="btn btn-danger btn-lg me-3" id="btnDelete" type="button" data-bs-dismiss="modal">DELETE</button>
+                <div class="flex-fill text-end">
+                    <button class="btn btn-light btn-lg me-3" id="btnClose" type="button" data-bs-dismiss="modal" style="width: 100px;">CLOSE</button>
+                    <button class="btn btn-success btn-lg" id="btnSubmit" type="button" style="width: 100px;">SAVE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<template id="taskCardTemplate">
+    <div class="card shadow mb-3" id="taskCard">
+        <div class="card-body">
+            <div class="row">
+                <h6 class="text-muted col-10" id="taskCardId"
+                    style="height: 32px;padding-top: 5px;padding-left: 14px;">#1</h6>
+                <div class="col-2"><img id="taskCardEditButton" class="img-fluid d-block float-end"
+                                        style="width: 100%;height: 32px;" src="assets/img/ic-edit.svg"></div>
+            </div>
+            <h4 class="card-title" id="taskCardTitle" style="height: 28px;">Title</h4><small
+                style="text-decoration: underline;">Description&nbsp;</small>
+            <p class="card-text" id="taskCardDescription">{{description}}</p>
+
+        </div>
+    </div>
+</template>
+
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="module" src="index.js"></script>
+</body>
+
+</html>

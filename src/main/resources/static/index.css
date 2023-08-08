@@ -1,0 +1,15 @@
+body{
+    background-color: var(--bs-gray-300);
+}
+
+.mainContainer{
+    background-color: var(--bs-gray-200);
+   }
+
+@media screen and (min-width: 992px){
+   .mainContainer{
+    height: 800px;
+   }
+}
+//
+//
