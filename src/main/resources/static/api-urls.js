@@ -34,8 +34,8 @@ export function HTTP_REQUEST_NO_CACHE(method,jsonRequestObj) {
 
 
 
-export const API_URL_INSERT_CARD = "api/boards/1/cards"
-export const API_URL_GET_ALL_CARDS = "/api/boards/1/cards"
-export const API_URL_GET_SINGLE_CARD = "api/boards/1/cards/"
-export const API_URL_UPDATE_CARD = "api/boards/1/cards/"
-export const API_URL_DELETE_CARD = "api/boards/1/cards/"
+export const API_URL_INSERT_CARD = "http://localhost:8080/api/boards/1/cards"
+export const API_URL_GET_ALL_CARDS = "http://localhost:8080/api/boards/1/cards"
+export const API_URL_GET_SINGLE_CARD = "http://localhost:8080/api/boards/1/cards/"
+export const API_URL_UPDATE_CARD = "http://localhost:8080/api/boards/1/cards/"
+export const API_URL_DELETE_CARD = "http://localhost:8080/api/boards/1/cards/"
