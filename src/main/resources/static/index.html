@@ -196,7 +196,10 @@
         redirect: 'follow'
     };
 
-    fetch("http://localhost:8080/api/boards", requestOptions)
+    const host = window.location.host;
+    const BASE_URL = "http://" + host + ":8080"
+
+    fetch("http://" + host + ":8080/api/boards", requestOptions)
         .then(response => response.text())
         .then(result => {
             console.log(result);

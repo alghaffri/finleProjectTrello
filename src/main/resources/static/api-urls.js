@@ -32,10 +32,12 @@ export function HTTP_REQUEST_NO_CACHE(method,jsonRequestObj) {
     return httpObj;
 }
 
+const host = window.location.host;
+const BASE_URL = "http://" + host + ":8080"
 
 
-export const API_URL_INSERT_CARD = "http://localhost:8080/api/boards/1/cards"
-export const API_URL_GET_ALL_CARDS = "http://localhost:8080/api/boards/1/cards"
-export const API_URL_GET_SINGLE_CARD = "http://localhost:8080/api/boards/1/cards/"
-export const API_URL_UPDATE_CARD = "http://localhost:8080/api/boards/1/cards/"
-export const API_URL_DELETE_CARD = "http://localhost:8080/api/boards/1/cards/"
+export const API_URL_INSERT_CARD = "http://" + host + ":8080/api/boards/1/cards"
+export const API_URL_GET_ALL_CARDS = "http://" + host + ":8080/api/boards/1/cards"
+export const API_URL_GET_SINGLE_CARD = "http://" + host + ":8080/api/boards/1/cards/"
+export const API_URL_UPDATE_CARD = "http://" + host + ":8080/api/boards/1/cards/"
+export const API_URL_DELETE_CARD = "http://" + host + ":8080/api/boards/1/cards/"
