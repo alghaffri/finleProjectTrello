@@ -5,7 +5,6 @@ After you've cloned the project repository, follow these steps to get it up and 
 Compose Up:
 Open a terminal window and navigate to the project directory. Run the following command to set up the necessary components:
 
-Copy code
 docker-compose up
 Accessing the Application:
 Once the containers are up and running, you can access the application through your web browser.
